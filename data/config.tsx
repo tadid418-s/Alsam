@@ -35,10 +35,6 @@ const siteConfig = {
         href: '/news',
       },
       {
-        label: 'Login',
-        href: '/login',
-      },
-      {
         label: 'Contact Us',
         href: '/contact',
         variant: 'primary',
