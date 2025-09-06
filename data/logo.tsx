@@ -1,13 +1,10 @@
-import { Box, Image, Text, Link } from '@chakra-ui/react'
+import { Box, Image } from '@chakra-ui/react'
+import NextLink from 'next/link'
 
 export const Logo = (props) => (
-  <Link
-    href="/"
-    display="inline-block"
-    sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'none' } }}
-  >
-    <Box display="flex" alignItems="center" {...props}>
+  <NextLink href="/" passHref legacyBehavior>
+    <Box as="a" display="flex" alignItems="center" sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'none' } }} {...props}>
       <Image src="/static/favicons/ALsam_Transparent.png" alt="AL-SAM logo" height="40px" width="auto" />
     </Box>
-  </Link>
+  </NextLink>
 )

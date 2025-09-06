@@ -86,7 +86,19 @@ const HeroSection: React.FC = () => {
   return (
     <Box position="relative" overflow="hidden">
       <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="40">
+      {/* Hero image cutout/banner below nav bar */}
+      <Box width="100%" maxH="420px" overflow="hidden" mb={{ base: 8, lg: 12 }}>
+        <Image
+          src="/static/images/alsam_hero.jpg"
+          alt="AL-SAM Group Hero"
+          width={1920}
+          height={420}
+          style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+          priority
+        />
+      </Box>
+      {/* Existing hero content below image */}
+      <Container maxW="container.xl" pt={{ base: 8, lg: 12 }} pb="40">
         <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
           <Hero
             id="home"
@@ -137,31 +149,9 @@ const HeroSection: React.FC = () => {
               </ButtonGroup>
             </FallInPlace>
           </Hero>
-          <Box
-            height="600px"
-            position="absolute"
-            display={{ base: 'none', lg: 'block' }}
-            left={{ lg: '60%', xl: '55%' }}
-            width="80vw"
-            maxW="1100px"
-            margin="0 auto"
-          >
-            <FallInPlace delay={1}>
-              <Box overflow="hidden" height="100%">
-                <Image
-                  src="/static/screenshots/list.png"
-                  width={1200}
-                  height={762}
-                  alt="Screenshot of a ListPage in Saas UI Pro"
-                  quality="75"
-                  priority
-                />
-              </Box>
-            </FallInPlace>
-          </Box>
         </Stack>
       </Container>
-
+      {/* Features below hero content */}
       <Features
         id="benefits"
         columns={[1, 2, 4]}
