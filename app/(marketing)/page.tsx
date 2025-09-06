@@ -84,8 +84,7 @@ const Home: NextPage = () => {
 
 const HeroSection: React.FC = () => {
   return (
-    <Box position="relative" overflow="hidden">
-      <BackgroundGradient height="100%" zIndex="-1" />
+  <Box position="relative" overflow="hidden">
       {/* Hero image cutout/banner below nav bar */}
       <Box width="100%" maxH="420px" overflow="hidden" mb={{ base: 8, lg: 12 }}>
         <Image

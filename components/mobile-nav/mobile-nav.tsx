@@ -95,7 +95,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
           >
             <Box>
               <Flex justify="space-between" px="8" pt="4" pb="4">
-                <Logo />
+                <Logo disableLink />
                 <HStack spacing="5">
                   <CloseButton ref={closeBtnRef} onClick={onClose} />
                 </HStack>
