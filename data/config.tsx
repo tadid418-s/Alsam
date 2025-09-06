@@ -31,8 +31,8 @@ const siteConfig = {
         href: '/careers',
       },
       {
-        label: 'News',
-        href: '/news',
+        label: 'Media',
+        href: '/media',
       },
       {
         label: 'Contact Us',
