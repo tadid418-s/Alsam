@@ -23,7 +23,7 @@ import { Logo } from '#components/layout/logo'
 import siteConfig from '#data/config'
 
 interface NavLinkProps extends LinkProps {
-  label: string
+  label?: string
   href?: string
   isActive?: boolean
 }
@@ -70,26 +70,12 @@ export function MobileNavContent(props: MobileNavContentProps) {
   const bgColor = useColorModeValue('whiteAlpha.900', 'blackAlpha.900')
 
   useRouteChanged(onClose)
-  console.log({ isOpen })
+  // console.log({ isOpen })
   /**
    * Scenario: Menu is open on mobile, and user resizes to desktop/tablet viewport.
    * Result: We'll close the menu
    */
   const showOnBreakpoint = useBreakpointValue({ base: true, lg: false })
-
-  React.useEffect(() => {
-    if (showOnBreakpoint == false) {
-      onClose()
-    }
-  }, [showOnBreakpoint, onClose])
-
-  useUpdateEffect(() => {
-    if (isOpen) {
-      requestAnimationFrame(() => {
-        closeBtnRef.current?.focus()
-      })
-    }
-  }, [isOpen])
 
   return (
     <>
@@ -115,19 +101,26 @@ export function MobileNavContent(props: MobileNavContentProps) {
                 </HStack>
               </Flex>
               <Stack alignItems="stretch" spacing="0">
-                {siteConfig.header.links.map(
-                  ({ href, id, label, ...props }, i) => {
-                    return (
-                      <NavLink
-                        href={href || `/#${id}`}
-                        key={i}
-                        {...(props as any)}
-                      >
+                {siteConfig.header.links.map((link, i) => {
+                  const { href, id, label, items, ...props } = link as any
+                  return (
+                    <React.Fragment key={`link-frag-${i}`}>
+                      <NavLink href={href || `/#${id}`} key={`link-${i}`} {...(props as any)}>
                         {label}
                       </NavLink>
-                    )
-                  },
-                )}
+
+                      {items && items.length ? (
+                        <Stack pl="8" spacing="0" key={`sub-${i}`}>
+                          {items.map((it: any, idx: number) => (
+                            <NavLink href={it.href} key={`sub-${i}-${idx}`} variant="ghost" fontWeight="normal">
+                              {it.label}
+                            </NavLink>
+                          ))}
+                        </Stack>
+                      ) : null}
+                    </React.Fragment>
+                  )
+                })}
               </Stack>
             </Box>
           </Flex>

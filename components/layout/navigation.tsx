@@ -18,8 +18,8 @@ const Navigation: React.FC = () => {
   const path = usePathname()
   const activeId = useScrollSpy(
     siteConfig.header.links
-      .filter(({ id }) => id)
-      .map(({ id }) => `[id="${id}"]`),
+      .filter((l) => !!(l as any).id)
+      .map((l) => `[id="${(l as any).id}"]`),
     {
       threshold: 0.75,
     },
@@ -33,7 +33,8 @@ const Navigation: React.FC = () => {
 
   return (
     <HStack spacing="2" flexShrink={0}>
-      {siteConfig.header.links.map(({ href, id, ...props }, i) => {
+      {siteConfig.header.links.map((link, i) => {
+        const { href, id, ...props } = link as any
         return (
           <NavLink
             display={['none', null, 'block']}
