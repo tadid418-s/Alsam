@@ -2,8 +2,10 @@ import { Box, useTheme, useColorModeValue } from '@chakra-ui/react'
 
 export const BackgroundGradient = ({ hideOverlay, ...props }: any) => {
   const theme = useTheme()
+  // Use the brand green explicitly for the hero background's dominant color
+  const BRAND_GREEN = '#196534'
   const colors = [
-    theme.colors.primary['800'],
+    BRAND_GREEN,
     theme.colors.secondary['500'],
     theme.colors.cyan['500'],
     theme.colors.teal['500'],

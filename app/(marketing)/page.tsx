@@ -263,7 +263,7 @@ const HighlightsSection = () => {
         name="Renata Alink"
         description="Founder"
         avatar="/static/images/avatar.jpg"
-        gradient={['pink.200', 'purple.500']}
+    gradient={['pink.200', 'primary.500']}
       >
         “Saas UI helped us set up a beautiful modern UI in no time. It saved us
         hundreds of hours in development time and allowed us to focus on
@@ -300,7 +300,7 @@ const HighlightsSection = () => {
             <Tag
               key={value}
               variant="subtle"
-              colorScheme="purple"
+              colorScheme="primary"
               rounded="full"
               px="3"
             >
