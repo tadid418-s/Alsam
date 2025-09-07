@@ -15,6 +15,7 @@ import {
   VStack,
   Wrap,
   useClipboard,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import { Br, Link } from '@saas-ui/react'
 import type { Metadata, NextPage } from 'next'
@@ -139,6 +140,41 @@ const HeroSection: React.FC = () => {
               <ButtonLink colorScheme="primary" size="md" href="/about" mt={6} alignSelf="flex-start">
                 Learn More
               </ButtonLink>
+            </Stack>
+          </Container>
+
+          {/* Institution descriptive section - placed directly below the container and above the benefits */}
+          <Container maxW="container.xl" py={{ base: 10, md: 16 }}>
+            <Stack spacing={6} alignItems="flex-start">
+              <Heading
+                as="h2"
+                fontSize={{ base: '4xl', md: '6xl', lg: '8xl' }}
+                lineHeight={{ base: 1.04, md: 0.98 }}
+                fontWeight={700}
+                textAlign="left"
+                fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial"
+                color={useColorModeValue('gray.800', 'gray.100')}
+                maxW="full"
+              >
+                <Box as="span" color={useColorModeValue('yellow.400', 'yellow.300')} mr={3}>
+                  Alsam
+                </Box>
+                Group Holdings is a diversified international firm
+                <Box as="span" display="block">
+                  focused on construction, engineering and commercial services
+                </Box>
+                <Box as="span" display="block">
+                  delivering strategic advisory, dispute resolution and project delivery support.
+                </Box>
+              </Heading>
+
+              <Text color={useColorModeValue('gray.600', 'gray.300')} fontSize={{ base: 'lg', md: 'xl' }} maxW="60ch">
+                Alsam Group brings together specialist teams with deep industry experience to
+                help clients navigate complex projects and commercial challenges. We combine
+                technical expertise, legal insight and commercial pragmatism to protect value
+                and drive outcomes across the lifecycle of major infrastructure and built
+                environment works.
+              </Text>
             </Stack>
           </Container>
       <Features
