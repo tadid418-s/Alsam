@@ -105,38 +105,42 @@ const HeroSection: React.FC = () => {
       <Badge />
 
       {/* Features below hero content */}
-      <Container maxW="container.xl" pt={0} pb={{ base: 8, lg: 12 }}>
-        <Stack
-          direction="column"
-          alignItems="flex-start"
-          justifyContent="flex-start"
-          spacing={{ base: 2, lg: 3 }}
-          minH={{ base: '24vh', lg: '28vh' }}
-        >
-          <Heading
-            as="h1"
-            textAlign="left"
-            fontSize={{ base: '2xl', md: '4xl', lg: '5xl' }}
-            fontWeight="bold"
-            lineHeight="1.1"
-            mb={{ base: 1, lg: 2 }}
-          >
-            AL-SAM GROUP HOLDINGS
-          </Heading>
-          <Text
-            textAlign="left"
-            fontSize={{ base: 'md', md: 'lg', lg: 'lg' }}
-            color="gray.700"
-            maxW="3xl"
-            mb={{ base: 1, lg: 2 }}
-          >
-            One of Ethiopia's largest and most diversified business groups, operating since 1999 across trading, manufacturing, real estate, agri-business, logistics, and investment.
-          </Text>
-          <ButtonLink colorScheme="primary" size="lg" href="/about" mt={0} alignSelf="flex-start">
-            Learn More
-          </ButtonLink>
-        </Stack>
-      </Container>
+          <Container maxW="container.xl" pt={0} pb={{ base: 8, lg: 12 }}>
+            <Stack
+              direction="column"
+              alignItems="flex-start"
+              justifyContent="flex-start"
+              spacing={0}
+              minH={{ base: '24vh', lg: '28vh' }}
+            >
+              <Heading
+                as="h1"
+                textAlign="left"
+                fontSize={{ base: '2xl', md: '5xl', lg: '7xl' }}
+                fontWeight="700"
+                lineHeight={0.95}
+                mb={0}
+                textTransform="uppercase"
+              >
+                Alsam Group Holdings
+              </Heading>
+
+              <Text
+                textAlign="left"
+                fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
+                color="gray.600"
+                maxW="3xl"
+                mt={2}
+                mb={0}
+              >
+                A diversified business conglomerate, driving sustainable growth.
+              </Text>
+
+              <ButtonLink colorScheme="primary" size="md" href="/about" mt={6} alignSelf="flex-start">
+                Learn More
+              </ButtonLink>
+            </Stack>
+          </Container>
       <Features
         id="benefits"
         columns={[1, 2, 4]}
