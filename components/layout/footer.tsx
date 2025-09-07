@@ -10,7 +10,9 @@ import {
 } from '@chakra-ui/react'
 import { Link, LinkProps } from '@saas-ui/react'
 
+
 import siteConfig from '#data/config'
+import { Logo } from './logo'
 
 export interface FooterProps extends BoxProps {
   columns?: number
@@ -25,7 +27,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
           <Stack spacing="8">
             <Stack alignItems="flex-start">
               <Flex>
-                <Box as={siteConfig.logo} flex="1" height="32px" />
+                <Logo disableLink />
               </Flex>
               <Text fontSize="md" color="muted">
                 {siteConfig.seo.description}

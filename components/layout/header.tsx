@@ -37,6 +37,7 @@ export const Header = (props: HeaderProps) => {
       <Container maxW="container.2xl" px="8" py="4">
         <Flex width="full" align="center" justify="space-between">
           <Logo
+            disableLink
             onClick={(e) => {
               if (window.location.pathname === '/') {
                 e.preventDefault()

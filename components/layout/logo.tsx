@@ -5,12 +5,15 @@ import * as React from 'react'
 
 import siteConfig from '#data/config'
 
+
 export interface LogoProps {
   href?: string
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void
+  disableLink?: boolean
 }
 
-export const Logo = ({ href = '/', onClick }: LogoProps) => {
+
+export const Logo = ({ href = '/', onClick, disableLink = false }: LogoProps) => {
   let logo
   if (siteConfig.logo) {
     logo = <Box as={siteConfig.logo} height="32px" mt="-4px" />
@@ -24,16 +27,23 @@ export const Logo = ({ href = '/', onClick }: LogoProps) => {
 
   return (
     <Flex h="8" flexShrink="0" alignItems="flex-start">
-      <Link
-        href={href}
-        display="flex"
-        p="1"
-        borderRadius="sm"
-        onClick={onClick}
-      >
-        {logo}
-        <VisuallyHidden>{siteConfig.seo?.title}</VisuallyHidden>
-      </Link>
+      {disableLink ? (
+        <>
+          {logo}
+          <VisuallyHidden>{siteConfig.seo?.title}</VisuallyHidden>
+        </>
+      ) : (
+        <Link
+          href={href}
+          display="flex"
+          p="1"
+          borderRadius="sm"
+          onClick={onClick}
+        >
+          {logo}
+          <VisuallyHidden>{siteConfig.seo?.title}</VisuallyHidden>
+        </Link>
+      )}
     </Flex>
   )
 }

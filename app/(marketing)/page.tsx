@@ -97,57 +97,36 @@ const HeroSection: React.FC = () => {
         />
       </Box>
       {/* Existing hero content below image */}
-      <Container maxW="container.xl" pt={{ base: 8, lg: 12 }} pb="40">
-        <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
-          <Hero
-            id="home"
-            justifyContent="flex-start"
-            px="0"
-            title={
-              <FallInPlace>
-                Build beautiful
-                <Br /> software faster
-              </FallInPlace>
-            }
-            description={
-              <FallInPlace delay={0.4} fontWeight="medium">
-                Saas UI is a <Em>React component library</Em>
-                <Br /> that doesn&apos;t get in your way and helps you <Br />{' '}
-                build intuitive SaaS products with speed.
-              </FallInPlace>
-            }
+      <Container maxW="container.xl" pt={0} pb={{ base: 8, lg: 12 }}>
+        <Stack
+          direction="column"
+          alignItems="flex-start"
+          justifyContent="flex-start"
+          spacing={{ base: 2, lg: 3 }}
+          minH={{ base: '24vh', lg: '28vh' }}
+        >
+          <Heading
+            as="h1"
+            textAlign="left"
+            fontSize={{ base: '2xl', md: '4xl', lg: '5xl' }}
+            fontWeight="bold"
+            lineHeight="1.1"
+            mb={{ base: 1, lg: 2 }}
           >
-            <FallInPlace delay={0.8}>
-              <HStack pt="4" pb="12" spacing="8">
-                <NextjsLogo height="28px" /> <ChakraLogo height="20px" />
-              </HStack>
-
-              <ButtonGroup spacing={4} alignItems="center">
-                <ButtonLink colorScheme="primary" size="lg" href="/signup">
-                  Sign Up
-                </ButtonLink>
-                <ButtonLink
-                  size="lg"
-                  href="https://demo.saas-ui.dev"
-                  variant="outline"
-                  rightIcon={
-                    <Icon
-                      as={FiArrowRight}
-                      sx={{
-                        transitionProperty: 'common',
-                        transitionDuration: 'normal',
-                        '.chakra-button:hover &': {
-                          transform: 'translate(5px)',
-                        },
-                      }}
-                    />
-                  }
-                >
-                  View demo
-                </ButtonLink>
-              </ButtonGroup>
-            </FallInPlace>
-          </Hero>
+            AL-SAM GROUP HOLDINGS
+          </Heading>
+          <Text
+            textAlign="left"
+            fontSize={{ base: 'md', md: 'lg', lg: 'lg' }}
+            color="gray.700"
+            maxW="3xl"
+            mb={{ base: 1, lg: 2 }}
+          >
+            One of Ethiopia's largest and most diversified business groups, operating since 1999 across trading, manufacturing, real estate, agri-business, logistics, and investment.
+          </Text>
+          <ButtonLink colorScheme="primary" size="lg" href="/about" mt={0} alignSelf="flex-start">
+            Learn More
+          </ButtonLink>
         </Stack>
       </Container>
       {/* Features below hero content */}
