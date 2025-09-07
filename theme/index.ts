@@ -25,9 +25,12 @@ const overrides = {
     }),
   },
   fonts: {
-    heading: 'Merriweather, serif',
-    body: 'Outfit, Merriweather, serif',
-    mono: 'Outfit, monospace',
+    heading:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+    body:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+    mono:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
   },
   fontSizes,
   components,
