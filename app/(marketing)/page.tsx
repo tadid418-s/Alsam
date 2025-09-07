@@ -156,7 +156,7 @@ const HeroSection: React.FC = () => {
                 color={useColorModeValue('gray.800', 'gray.100')}
                 maxW="full"
               >
-                <Box as="span" color={useColorModeValue('yellow.400', 'yellow.300')} mr={3}>
+                <Box as="span" color={useColorModeValue('green.600', 'green.300')} mr={3}>
                   Alsam
                 </Box>
                 Group Holdings is a diversified international firm
