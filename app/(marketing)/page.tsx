@@ -163,15 +163,8 @@ const HeroSection: React.FC = () => {
                 baseOpacity={0.05}
                 endOpacity={1}
                 fillAt={1}
+                mb={{ base: 4, md: 6 }}
               />
-
-              <Text color={useColorModeValue('gray.600', 'gray.300')} fontSize={{ base: 'lg', md: 'xl' }} maxW="60ch">
-                Alsam Group brings together specialist teams with deep industry experience to
-                help clients navigate complex projects and commercial challenges. We combine
-                technical expertise, legal insight and commercial pragmatism to protect value
-                and drive outcomes across the lifecycle of major infrastructure and built
-                environment works.
-              </Text>
             </Stack>
           </Container>
       <Features
