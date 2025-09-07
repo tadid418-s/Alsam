@@ -43,6 +43,7 @@ import * as React from 'react'
 import { ButtonLink } from '#components/button-link/button-link'
 import { Faq } from '#components/faq'
 import { Features } from '#components/features'
+import Badge from '#components/hero/Badge'
 import { BackgroundGradient } from '#components/gradients/background-gradient'
 import { Hero } from '#components/hero'
 import {
@@ -86,7 +87,7 @@ const HeroSection: React.FC = () => {
   return (
   <Box position="relative" overflow="hidden">
       {/* Hero image cutout/banner below nav bar */}
-      <Box width="100%" maxH="420px" overflow="hidden" mb={{ base: 8, lg: 12 }}>
+      <Box width="100%" maxH="420px" overflow="hidden" mb={{ base: 8, lg: 12 }} position="relative">
         <Image
           src="/static/images/alsam_hero.jpg"
           alt="AL-SAM Group Hero"
@@ -95,6 +96,8 @@ const HeroSection: React.FC = () => {
           style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
           priority
         />
+        {/* Rotating badge overlay */}
+        <Badge />
       </Box>
       {/* Existing hero content below image */}
       <Container maxW="container.xl" pt={0} pb={{ base: 8, lg: 12 }}>

@@ -1,0 +1,67 @@
+.badge-wrapper {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.badge-inner {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border: 1px solid #c0a062; /* Gold accent */
+  border-radius: 50%;
+  background: #fafafa;
+  box-shadow: inset 0 0 0 3px #333, 0 5px 10px rgba(0, 0, 0, 0.15); /* Inner ring and shadow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-logo {
+  font-family: "Georgia", serif;
+  font-size: 90px;
+  font-weight: bold;
+  color: #333;
+}
+
+.circular-text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: spin 25s linear infinite;
+}
+
+.badge-inner:hover .circular-text-wrapper {
+  animation-play-state: paused;
+}
+
+.circular-text-wrapper span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px; /* This is the radius */
+  transform-origin: bottom center;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
