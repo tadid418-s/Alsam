@@ -15,8 +15,8 @@ import Navigation from './navigation'
 export interface HeaderProps extends Omit<BoxProps, 'children'> {}
 
 export const Header = (props: HeaderProps) => {
-  // Always use scrolled state
-  const bg = useColorModeValue('whiteAlpha.700', 'rgba(29, 32, 37, 0.7)')
+  // Less transparent (more solid) background
+  const bg = useColorModeValue('whiteAlpha.900', 'rgba(29, 32, 37, 0.9)')
 
   return (
     <Box

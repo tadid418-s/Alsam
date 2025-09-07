@@ -45,6 +45,7 @@ import { ButtonLink } from '#components/button-link/button-link'
 import { Faq } from '#components/faq'
 import { Features } from '#components/features'
 import Badge from '#components/hero/Badge'
+import ScrollShadeText from '#components/animated/scroll-shade-text'
 import { BackgroundGradient } from '#components/gradients/background-gradient'
 import { Hero } from '#components/hero'
 import {
@@ -146,8 +147,11 @@ const HeroSection: React.FC = () => {
           {/* Institution descriptive section - placed directly below the container and above the benefits */}
           <Container maxW="container.xl" py={{ base: 10, md: 16 }}>
             <Stack spacing={6} alignItems="flex-start">
-              <Heading
+              <ScrollShadeText
                 as="h2"
+                text={
+                  'Alsam Group Holdings is a diversified international firm focused on construction, engineering and commercial services delivering strategic advisory, dispute resolution and project delivery support.'
+                }
                 fontSize={{ base: '4xl', md: '6xl', lg: '8xl' }}
                 lineHeight={{ base: 1.04, md: 0.98 }}
                 fontWeight={700}
@@ -155,18 +159,11 @@ const HeroSection: React.FC = () => {
                 fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial"
                 color={useColorModeValue('gray.800', 'gray.100')}
                 maxW="full"
-              >
-                <Box as="span" color={useColorModeValue('green.600', 'green.300')} mr={3}>
-                  Alsam
-                </Box>
-                Group Holdings is a diversified international firm
-                <Box as="span" display="block">
-                  focused on construction, engineering and commercial services
-                </Box>
-                <Box as="span" display="block">
-                  delivering strategic advisory, dispute resolution and project delivery support.
-                </Box>
-              </Heading>
+                highlightWords={['Alsam']}
+                baseOpacity={0.05}
+                endOpacity={1}
+                fillAt={1}
+              />
 
               <Text color={useColorModeValue('gray.600', 'gray.300')} fontSize={{ base: 'lg', md: 'xl' }} maxW="60ch">
                 Alsam Group brings together specialist teams with deep industry experience to
