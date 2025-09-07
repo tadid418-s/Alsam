@@ -8,6 +8,12 @@ export default function Layout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" data-theme={colorMode} style={{ colorScheme: colorMode }}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Outfit:wght@100..900&display=swap"
+          rel="stylesheet"
+        />
         <link
           rel="apple-touch-icon"
           sizes="76x76"

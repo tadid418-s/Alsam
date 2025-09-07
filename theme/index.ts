@@ -1,5 +1,6 @@
 import { extendTheme } from '@chakra-ui/react'
-import '@fontsource-variable/inter'
+// Use DM Sans everywhere (standard discrete weight imports)
+// DM Sans removed; using Google-hosted Merriweather & Outfit via <link> tags in layout
 import { theme as baseTheme } from '@saas-ui/react'
 
 import components from './components'
@@ -24,8 +25,9 @@ const overrides = {
     }),
   },
   fonts: {
-    heading: 'Inter Variable, Inter, sans-serif',
-    body: 'Inter Variable, Inter, sans-serif',
+    heading: 'Merriweather, serif',
+    body: 'Outfit, Merriweather, serif',
+    mono: 'Outfit, monospace',
   },
   fontSizes,
   components,
