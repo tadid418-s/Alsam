@@ -104,8 +104,8 @@ const HeroSection: React.FC = () => {
 
       <Badge />
 
-      {/* Existing hero content below image */}
-      <Container maxW="container.xl" pt={0} pb={{ base: 8, lg: 12 }} mt="-140px">
+      {/* Features below hero content */}
+      <Container maxW="container.xl" pt={0} pb={{ base: 8, lg: 12 }}>
         <Stack
           direction="column"
           alignItems="flex-start"
@@ -137,7 +137,6 @@ const HeroSection: React.FC = () => {
           </ButtonLink>
         </Stack>
       </Container>
-      {/* Features below hero content */}
       <Features
         id="benefits"
         columns={[1, 2, 4]}
