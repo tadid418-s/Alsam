@@ -58,6 +58,7 @@ import { FallInPlace } from '#components/motion/fall-in-place'
 import { Pricing } from '#components/pricing/pricing'
 import { Testimonial, Testimonials } from '#components/testimonials'
 import { Em } from '#components/typography'
+import { MotionBox } from '#components/motion/box'
 import faq from '#data/faq'
 import pricing from '#data/pricing'
 import testimonials from '#data/testimonials'
@@ -171,7 +172,13 @@ const HeroSection: React.FC = () => {
           {/* Business Overview section: text left, image right (moved below scroll-shade section) */}
           <Container maxW="container.xl" py={{ base: 10, md: 16 }}>
             <Flex direction={{ base: 'column', md: 'row' }} align="stretch" gap={{ base: 8, md: 12 }}>
-              <Box flex="1">
+              <MotionBox
+                flex="1"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+              >
                 <Heading as="h3" fontSize={{ base: '2xl', md: '3xl' }} mb={4} color={useColorModeValue('gray.800', 'gray.100')}>
                   Our Business
                 </Heading>
@@ -180,8 +187,19 @@ const HeroSection: React.FC = () => {
                   projects from planning through delivery. Our teams provide advisory, claims and dispute
                   resolution, and project controls to help clients manage risk and achieve results.
                 </Text>
-              </Box>
-              <Box flex="1" minH={{ base: '220px', md: '320px' }} position="relative" borderRadius="lg" overflow="hidden" boxShadow="md">
+              </MotionBox>
+              <MotionBox
+                flex="1"
+                minH={{ base: '220px', md: '320px' }}
+                position="relative"
+                borderRadius="lg"
+                overflow="hidden"
+                boxShadow="md"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.9, ease: 'easeOut', delay: 0.1 }}
+              >
                 <Image
                   src="/static/images/eelco.jpg"
                   alt="Alsam business overview"
@@ -190,7 +208,7 @@ const HeroSection: React.FC = () => {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                   priority={false}
                 />
-              </Box>
+              </MotionBox>
             </Flex>
           </Container>
       <Features
