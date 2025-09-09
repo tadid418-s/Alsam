@@ -143,6 +143,7 @@ const HeroSection: React.FC = () => {
               </ButtonLink>
             </Stack>
           </Container>
+          
 
           {/* Institution descriptive section - placed directly below the container and above the benefits */}
           <Container maxW="container.xl" py={{ base: 10, md: 16 }}>
@@ -166,6 +167,31 @@ const HeroSection: React.FC = () => {
                 mb={{ base: 4, md: 6 }}
               />
             </Stack>
+          </Container>
+          {/* Business Overview section: text left, image right (moved below scroll-shade section) */}
+          <Container maxW="container.xl" py={{ base: 10, md: 16 }}>
+            <Flex direction={{ base: 'column', md: 'row' }} align="stretch" gap={{ base: 8, md: 12 }}>
+              <Box flex="1">
+                <Heading as="h3" fontSize={{ base: '2xl', md: '3xl' }} mb={4} color={useColorModeValue('gray.800', 'gray.100')}>
+                  Our Business
+                </Heading>
+                <Text color={useColorModeValue('gray.700', 'gray.300')} fontSize={{ base: 'md', md: 'lg' }}>
+                  We operate across construction, engineering, and commercial services, supporting complex
+                  projects from planning through delivery. Our teams provide advisory, claims and dispute
+                  resolution, and project controls to help clients manage risk and achieve results.
+                </Text>
+              </Box>
+              <Box flex="1" minH={{ base: '220px', md: '320px' }} position="relative" borderRadius="lg" overflow="hidden" boxShadow="md">
+                <Image
+                  src="/static/images/eelco.jpg"
+                  alt="Alsam business overview"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                  priority={false}
+                />
+              </Box>
+            </Flex>
           </Container>
       <Features
         id="benefits"
